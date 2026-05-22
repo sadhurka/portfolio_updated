@@ -174,7 +174,7 @@ export default function HeroSection() {
                 }}
               >
                 <Image
-                  src="https://shrug-person-78902957.figma.site/_components/v2/d24c01ad3a56fc65e942a1f501eb73db42d7cf9a/Rectangle_40443.81459862.png"
+                  src="/images/profile.png"
                   alt="Sadhurka — Software Engineer"
                   width={440}
                   height={540}
@@ -358,7 +358,12 @@ export default function HeroSection() {
 
           {/* CTA */}
           <FadeIn delay={0.44} y={20}>
-            <ContactButton size="md" text="Download CV" />
+            <ContactButton
+              size="md"
+              text="Download CV"
+              href="/images/Sadhurka_Devadas_CV.pdf"
+              download="Sadhurka_Devadas_CV.pdf"
+            />
           </FadeIn>
 
           {/* On mobile: inline availability pill instead of floating */}

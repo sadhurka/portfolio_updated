@@ -15,6 +15,7 @@ interface ContactButtonProps {
   text?: string;
   href?: string;
   target?: "_blank" | "_self";
+  download?: boolean | string;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
 }
@@ -24,21 +25,17 @@ export default function ContactButton({
   text = "Contact Me",
   href,
   target = "_blank",
+  download,
   type = "button",
   disabled = false,
 }: ContactButtonProps) {
-  const handleClick = () => {
-    if (href && !disabled) {
-      window.open(href, target);
-    }
-  };
-
   if (href) {
     return (
       <motion.a
         href={href}
-        target={target}
-        rel={target === "_blank" ? "noreferrer noopener" : undefined}
+        target={download ? "_self" : target}
+        download={download}
+        rel={target === "_blank" && !download ? "noreferrer noopener" : undefined}
         aria-disabled={disabled}
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 0.97 }}
@@ -75,7 +72,6 @@ export default function ContactButton({
     <motion.button
       type={type}
       disabled={disabled}
-      onClick={handleClick}
       whileHover={{ scale: 1.04 }}
       whileTap={{ scale: 0.97 }}
       style={{
