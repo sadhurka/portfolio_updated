@@ -475,11 +475,12 @@ export default function HeroSection() {
           .hero-text {
             order: 2;
           }
-          /* Hide most nav links on very small screens, keep 2 */
-          @media (max-width: 400px) {
-            .nav-links a:nth-child(n+3) {
-              display: none;
-            }
+        }
+
+        /* Hide most nav links on very small screens, keep 2 */
+        @media (max-width: 400px) {
+          .nav-links a:nth-child(n+3) {
+            display: none;
           }
         }
       `}</style>
