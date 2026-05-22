@@ -20,6 +20,7 @@ const SKILLS = [
   { name: "JavaScript" },
   { name: "PHP" },
   { name: "Java" },
+   { name: "Figma" },
 ];
 
 
@@ -222,7 +223,7 @@ export default function HeroSection() {
                   }}
                 >
                   <p style={{ color: "rgba(215,226,234,0.45)", fontFamily: "'Kanit', sans-serif", fontSize: "0.6rem", textTransform: "uppercase", letterSpacing: "0.14em", margin: "0 0 2px" }}>
-                    Projects shipped
+                    Projects completed
                   </p>
                   <p style={{ color: "#D7E2EA", fontFamily: "'Kanit', sans-serif", fontWeight: 700, fontSize: "1.4rem", lineHeight: 1, margin: 0, letterSpacing: "-0.02em" }}>
                     10+
