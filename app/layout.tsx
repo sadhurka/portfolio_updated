@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Jack -- 3D Creator",
-  description:
-    "Jack is a 3D creator driven by crafting striking and unforgettable projects.",
+  title: "sadhurka",
+
+ 
 };
 
 export default function RootLayout({
