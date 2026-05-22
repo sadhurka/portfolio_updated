@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, type RefObject } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform, type RefObject } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import LiveProjectButton from "./LiveProjectButton";
 
 interface Project {

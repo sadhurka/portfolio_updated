@@ -17,7 +17,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.215, 0.61, 0.355, 1.0] as number[] },
+    transition: { duration: 0.8, ease: [0.215, 0.61, 0.355, 1.0] as const },
   },
 };
 
@@ -27,7 +27,7 @@ const arrowVariants = {
     opacity: 1,
     rotate: 0,
     x: 4,
-    transition: { duration: 0.3, ease: "easeOut" },
+    transition: { duration: 0.3, ease: "easeOut" as const },
   },
 };
 

@@ -16,6 +16,7 @@ interface ContactButtonProps {
   href?: string;
   target?: "_blank" | "_self";
   type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
 export default function ContactButton({
@@ -24,9 +25,10 @@ export default function ContactButton({
   href,
   target = "_blank",
   type = "button",
+  disabled = false,
 }: ContactButtonProps) {
   const handleClick = () => {
-    if (href) {
+    if (href && !disabled) {
       window.open(href, target);
     }
   };
@@ -37,6 +39,7 @@ export default function ContactButton({
         href={href}
         target={target}
         rel={target === "_blank" ? "noreferrer noopener" : undefined}
+        aria-disabled={disabled}
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 0.97 }}
         style={{
@@ -58,6 +61,8 @@ export default function ContactButton({
           display: "inline-flex",
           alignItems: "center",
           justifyContent: "center",
+          pointerEvents: disabled ? "none" : "auto",
+          opacity: disabled ? 0.6 : 1,
           ...sizes[size],
         }}
       >
@@ -69,6 +74,7 @@ export default function ContactButton({
   return (
     <motion.button
       type={type}
+      disabled={disabled}
       onClick={handleClick}
       whileHover={{ scale: 1.04 }}
       whileTap={{ scale: 0.97 }}
@@ -86,7 +92,8 @@ export default function ContactButton({
         textTransform: "uppercase",
         letterSpacing: "0.12em",
         border: "none",
-        cursor: "pointer",
+        cursor: disabled ? "not-allowed" : "pointer",
+        opacity: disabled ? 0.6 : 1,
         ...sizes[size],
       }}
     >
