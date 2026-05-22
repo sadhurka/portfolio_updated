@@ -13,11 +13,63 @@ const sizes: Record<Size, { padding: string; fontSize: string }> = {
 interface ContactButtonProps {
   size?: Size;
   text?: string;
+  href?: string;
+  target?: "_blank" | "_self";
+  type?: "button" | "submit" | "reset";
 }
 
-export default function ContactButton({ size = "md", text = "Contact Me" }: ContactButtonProps) {
+export default function ContactButton({
+  size = "md",
+  text = "Contact Me",
+  href,
+  target = "_blank",
+  type = "button",
+}: ContactButtonProps) {
+  const handleClick = () => {
+    if (href) {
+      window.open(href, target);
+    }
+  };
+
+  if (href) {
+    return (
+      <motion.a
+        href={href}
+        target={target}
+        rel={target === "_blank" ? "noreferrer noopener" : undefined}
+        whileHover={{ scale: 1.04 }}
+        whileTap={{ scale: 0.97 }}
+        style={{
+          borderRadius: "9999px",
+          background:
+            "linear-gradient(123deg, #18011F 7%, #B600A8 37%, #7621B0 72%, #BE4C00 100%)",
+          boxShadow:
+            "0px 4px 4px rgba(181,1,167,0.25), inset 4px 4px 12px #7721B1",
+          outline: "2px solid white",
+          outlineOffset: "-3px",
+          color: "white",
+          fontFamily: "'Kanit', sans-serif",
+          fontWeight: 500,
+          textTransform: "uppercase",
+          letterSpacing: "0.12em",
+          border: "none",
+          cursor: "pointer",
+          textDecoration: "none",
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          ...sizes[size],
+        }}
+      >
+        {text}
+      </motion.a>
+    );
+  }
+
   return (
     <motion.button
+      type={type}
+      onClick={handleClick}
       whileHover={{ scale: 1.04 }}
       whileTap={{ scale: 0.97 }}
       style={{

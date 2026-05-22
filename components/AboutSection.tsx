@@ -4,7 +4,7 @@ import Image from "next/image";
 import FadeIn from "./FadeIn";
 import AnimatedText from "./AnimatedText";
 import ContactButton from "./ContactButton";
-import { ABOUT_DECORATIONS, ABOUT_TEXT } from "@/lib/data";
+import { ABOUT_DECORATIONS, ABOUT_TEXT, CONTACT_INFO } from "@/lib/data";
 
 export default function AboutSection() {
   return (
@@ -91,7 +91,11 @@ export default function AboutSection() {
         />
 
         <div style={{ marginTop: "clamp(24px, 4vw, 48px)" }}>
-          <ContactButton size="lg" />
+          <ContactButton
+            size="lg"
+            text="WhatsApp"
+            href={`https://wa.me/${CONTACT_INFO.whatsapp.replace(/\D/g, "")}`}
+          />
         </div>
       </div>
     </section>

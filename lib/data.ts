@@ -144,3 +144,8 @@ export const ABOUT_DECORATIONS = [
 
 export const ABOUT_TEXT =
   "I'm Sadhurka, a dedicated software engineer with a love for clean code, creative problem-solving, and empowering others through technology. With experience in full-stack development, I enjoy building web applications that make a difference. Let's create something amazing together!";
+
+export const CONTACT_INFO = {
+  email: "sadhurkadevaraj@gmail.com",
+  whatsapp: "+94721549099",
+} as const;
