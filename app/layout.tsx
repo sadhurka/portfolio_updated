@@ -3,8 +3,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "sadhurka",
-
- 
+  verification: {
+    google: "googleb6b50b67b1a9cbac.html",
+  },
 };
 
 export default function RootLayout({
